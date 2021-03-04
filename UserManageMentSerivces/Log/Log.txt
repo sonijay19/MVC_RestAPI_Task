@@ -1,0 +1,236 @@
+ Application Starting Up
+ HTTP "GET" "/weatherforecast" responded 404 in 3.4800 ms
+ Application Starting Up
+ HTTP "GET" "/weatherforecast" responded 404 in 27.2929 ms
+ HTTP "GET" "/favicon.ico" responded 404 in 1.0340 ms
+ Application Starting Up
+ HTTP "GET" "/weatherforecast" responded 404 in 83.1345 ms
+ HTTP "GET" "/favicon.ico" responded 404 in 0.5314 ms
+ Application Starting Up
+ HTTP "GET" "/weatherforecast" responded 404 in 3.5752 ms
+ HTTP "GET" "/favicon.ico" responded 404 in 0.2417 ms
+ Application Starting Up
+ HTTP "GET" "/weatherforecast" responded 404 in 3.2113 ms
+ HTTP "GET" "/api/v1/GetUserDetails" responded 500 in 328.0061 ms
+System.InvalidOperationException: Unable to resolve type: UserManageMentSerivces.BusinessLayer.Interfaces.IGetUserDetailsServices, service name: 
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+   at LightInject.ServiceFactoryExtensions.GetInstance[TService](IServiceFactory factory)
+   at DemoService.ClientLayer.RequestProcessor.GetUserInformationAsync(UserLoginRequestMessages userDetails) in G:\Training\2_21_2021\UserManageMentSerivces\ClientLayer\ClientServices\RequestProcessor.cs:line 66
+   at UserManageMentSerivces.Controllers.GetUserDetailsController.Get() in G:\Training\2_21_2021\UserManageMentSerivces\Controllers\GetUserDetailsController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve type: UserManageMentSerivces.BusinessLayer.Interfaces.IGetUserDetailsServices, service name: 
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+   at LightInject.ServiceFactoryExtensions.GetInstance[TService](IServiceFactory factory)
+   at DemoService.ClientLayer.RequestProcessor.GetUserInformationAsync(UserLoginRequestMessages userDetails) in G:\Training\2_21_2021\UserManageMentSerivces\ClientLayer\ClientServices\RequestProcessor.cs:line 66
+   at UserManageMentSerivces.Controllers.GetUserDetailsController.Get() in G:\Training\2_21_2021\UserManageMentSerivces\Controllers\GetUserDetailsController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ Application Starting Up
+ HTTP "GET" "/UserLogin" responded 404 in 3.1717 ms
+ HTTP "GET" "/favicon.ico" responded 404 in 0.4730 ms
+ HTTP "GET" "/api/v1/GetUserDetails" responded 500 in 423.5834 ms
+System.InvalidOperationException: Unable to resolve type: UserManageMentSerivces.BusinessLayer.Interfaces.IGetUserDetailsServices, service name: 
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+   at LightInject.ServiceFactoryExtensions.GetInstance[TService](IServiceFactory factory)
+   at DemoService.ClientLayer.RequestProcessor.GetUserInformationAsync(UserLoginRequestMessages userDetails) in G:\Training\2_21_2021\UserManageMentSerivces\ClientLayer\ClientServices\RequestProcessor.cs:line 66
+   at UserManageMentSerivces.Controllers.GetUserDetailsController.Get() in G:\Training\2_21_2021\UserManageMentSerivces\Controllers\GetUserDetailsController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve type: UserManageMentSerivces.BusinessLayer.Interfaces.IGetUserDetailsServices, service name: 
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+   at LightInject.ServiceFactoryExtensions.GetInstance[TService](IServiceFactory factory)
+   at DemoService.ClientLayer.RequestProcessor.GetUserInformationAsync(UserLoginRequestMessages userDetails) in G:\Training\2_21_2021\UserManageMentSerivces\ClientLayer\ClientServices\RequestProcessor.cs:line 66
+   at UserManageMentSerivces.Controllers.GetUserDetailsController.Get() in G:\Training\2_21_2021\UserManageMentSerivces\Controllers\GetUserDetailsController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ Application Starting Up
+ HTTP "GET" "/UserLogin" responded 404 in 3.2130 ms
+ HTTP "GET" "/api/v1/GetUserDetails" responded 500 in 355.8829 ms
+System.InvalidOperationException: Unable to resolve type: UserManageMentSerivces.BusinessLayer.GetUserDetails, service name: 
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+   at LightInject.ServiceFactoryExtensions.GetInstance[TService](IServiceFactory factory)
+   at DemoService.ClientLayer.RequestProcessor.GetUserInformationAsync(UserLoginRequestMessages userDetails) in G:\Training\2_21_2021\UserManageMentSerivces\ClientLayer\ClientServices\RequestProcessor.cs:line 66
+   at UserManageMentSerivces.Controllers.GetUserDetailsController.Get() in G:\Training\2_21_2021\UserManageMentSerivces\Controllers\GetUserDetailsController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve type: UserManageMentSerivces.BusinessLayer.GetUserDetails, service name: 
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+   at LightInject.ServiceFactoryExtensions.GetInstance[TService](IServiceFactory factory)
+   at DemoService.ClientLayer.RequestProcessor.GetUserInformationAsync(UserLoginRequestMessages userDetails) in G:\Training\2_21_2021\UserManageMentSerivces\ClientLayer\ClientServices\RequestProcessor.cs:line 66
+   at UserManageMentSerivces.Controllers.GetUserDetailsController.Get() in G:\Training\2_21_2021\UserManageMentSerivces\Controllers\GetUserDetailsController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ Application Starting Up
+ HTTP "GET" "/UserLogin" responded 404 in 3.1939 ms
+ HTTP "GET" "/favicon.ico" responded 404 in 0.5350 ms
+ HTTP "GET" "/api/v1/GetUserDetails" responded 500 in 296.5347 ms
+System.InvalidOperationException: Unable to resolve type: UserManageMentSerivces.BusinessLayer.GetUserDetails, service name: 
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+   at LightInject.ServiceFactoryExtensions.GetInstance[TService](IServiceFactory factory)
+   at DemoService.ClientLayer.RequestProcessor.GetUserInformationAsync(UserLoginRequestMessages userDetails) in G:\Training\2_21_2021\UserManageMentSerivces\ClientLayer\ClientServices\RequestProcessor.cs:line 67
+   at UserManageMentSerivces.Controllers.GetUserDetailsController.Get() in G:\Training\2_21_2021\UserManageMentSerivces\Controllers\GetUserDetailsController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve type: UserManageMentSerivces.BusinessLayer.GetUserDetails, service name: 
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+   at LightInject.ServiceFactoryExtensions.GetInstance[TService](IServiceFactory factory)
+   at DemoService.ClientLayer.RequestProcessor.GetUserInformationAsync(UserLoginRequestMessages userDetails) in G:\Training\2_21_2021\UserManageMentSerivces\ClientLayer\ClientServices\RequestProcessor.cs:line 67
+   at UserManageMentSerivces.Controllers.GetUserDetailsController.Get() in G:\Training\2_21_2021\UserManageMentSerivces\Controllers\GetUserDetailsController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ Application Starting Up
+ HTTP "GET" "/UserLogin" responded 404 in 3.1518 ms
+ HTTP "GET" "/api/v1/GetUserDetails" responded 200 in 4068.8028 ms
+ Application Starting Up
+ HTTP "GET" "/UserLogin" responded 404 in 3.1915 ms
+ HTTP "GET" "/api/v1/GetUserDetails" responded 500 in 314.2952 ms
+System.InvalidOperationException: Unable to resolve type: UserManageMentSerivces.BusinessLayer.Interfaces.IGetUserDetailsServices, service name: 
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+   at LightInject.ServiceFactoryExtensions.GetInstance[TService](IServiceFactory factory)
+   at DemoService.ClientLayer.RequestProcessor.GetUserInformationAsync(UserLoginRequestMessages userDetails) in G:\Training\2_21_2021\UserManageMentSerivces\ClientLayer\ClientServices\RequestProcessor.cs:line 65
+   at UserManageMentSerivces.Controllers.GetUserDetailsController.Get() in G:\Training\2_21_2021\UserManageMentSerivces\Controllers\GetUserDetailsController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve type: UserManageMentSerivces.BusinessLayer.Interfaces.IGetUserDetailsServices, service name: 
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+   at LightInject.ServiceFactoryExtensions.GetInstance[TService](IServiceFactory factory)
+   at DemoService.ClientLayer.RequestProcessor.GetUserInformationAsync(UserLoginRequestMessages userDetails) in G:\Training\2_21_2021\UserManageMentSerivces\ClientLayer\ClientServices\RequestProcessor.cs:line 65
+   at UserManageMentSerivces.Controllers.GetUserDetailsController.Get() in G:\Training\2_21_2021\UserManageMentSerivces\Controllers\GetUserDetailsController.cs:line 22
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ Application Starting Up
+ HTTP "GET" "/UserLogin" responded 404 in 5.9324 ms
+ HTTP "GET" "/api/v1/GetUserDetails" responded 200 in 1309.4199 ms
+ Application Starting Up
+ HTTP "GET" "/UserLogin" responded 404 in 17.7244 ms

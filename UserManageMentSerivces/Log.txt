@@ -1,0 +1,6 @@
+ Application Starting Up
+ HTTP "GET" "/weatherforecast" responded 404 in 3.2602 ms
+ You are in CreateUser Controller
+ HTTP "PUT" "/api/v1/CreateUser" responded 200 in 624.1461 ms
+ You are in CreateUser Controller
+ HTTP "PUT" "/api/v1/CreateUser" responded 200 in 24.1991 ms

@@ -1,0 +1,35 @@
+﻿@model MVCUserMangementTask.Models.UserLogin.UserRequestModel
+@{
+    ViewData["Title"] = "Index";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        .field-validation-error {
+            color: red
+        }
+
+        .validation-summary-errors {
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <header style="width:100%">
+        @Html.Partial("Header")
+    </header>
+    <div style="margin-top:50px">
+        <form class="form-inline" action="LoginUser" method="post">
+            <div class="form-group mx-sm-3 mb-2">
+                <label asp-for="UserEmail" class="sr-only">Email Address</label>
+                <input type="text" asp-for="UserEmail" class="form-control" id="userEmail" name="userEmail" placeholder="Enter Your Email Address">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+        </form>
+        <br />
+        <span asp-validation-for="UserEmail"></span>
+        <b class="field-validation-error">@ViewBag.Errors</b>
+    </div>
+</body>
+</html>
