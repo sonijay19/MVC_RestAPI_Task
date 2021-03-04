@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UserManageMentSerivces.DAO;
+using UserManageMentSerivces.DAO.DAOServices;
 using UserManageMentSerivces.DAO.Interface;
 
 namespace RESTServices.DAO
@@ -24,6 +25,21 @@ namespace RESTServices.DAO
         public IGetUserLoginAuthenticate GetUserInformationAll()
         {
             return GetUserInformationDB.Instance;
+        }
+
+        public IUserDetailsUpdate UpdateUserInformation()
+        {
+            return UserUpdateDetails.Instance;
+        }
+
+        public IUserDetailsInsert InsertUserDetails()
+        {
+            return InsertUserDetailsServices.Instance;
+        }
+        // DeleteUserDetailsService IDeleteUserDetails
+        public IDeleteUserDetails DeleteUserInformation()
+        {
+            return DeleteUserDetailsService.Instance;
         }
     }
 }

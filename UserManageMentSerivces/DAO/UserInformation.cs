@@ -14,5 +14,6 @@ namespace UserManageMentSerivces.DAO
         public string LastName { get; set; }
         public string UserStatus { get; set; }
         public string UserType { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

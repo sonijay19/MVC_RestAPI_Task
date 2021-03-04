@@ -7,6 +7,7 @@ namespace UserManageMentSerivces.BusinessLayer.Entities.Enums
 {
     public enum ErrorCodes
     {
+        INVALID_USER_FIRSTORLASTNAME,
         INVALID_USER,
         INVALID_USER_EMAILID,
         INTERNAL_SERVER_ERROR,
@@ -18,5 +19,6 @@ namespace UserManageMentSerivces.BusinessLayer.Entities.Enums
         INVALID_USER_ACCESSTYPE,
         INVALID_FROMDATE,
         USER_NOT_FOUND,
+        USER_INVALID_MOBILE_NUMBER,
     }
 }

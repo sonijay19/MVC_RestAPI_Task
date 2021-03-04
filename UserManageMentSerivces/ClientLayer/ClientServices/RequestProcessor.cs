@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web;
 using UserManageMentSerivces.ClientLayer.RequestMessages;
 using UserManageMentSerivces.ClientLayer.ResponseMessages;
 using UserManageMentSerivces.ClientLayer.Validation;
 using UserManageMentSerivces.BusinessLayer;
-using AutoMapper;
-using UserManageMentSerivces.BusinessLayer.Entities.DTO;
 using UserManageMentSerivces.Exceptions;
 using UserManageMentSerivces.BusinessLayer.Entities.Enums;
-using UserManageMentSerivces.DAO;
+using UserManageMentSerivces.BusinessLayer.Interfaces;
+using LightInject;
 
 namespace DemoService.ClientLayer
 {
@@ -68,8 +61,12 @@ namespace DemoService.ClientLayer
                 var result = validator.Validate(userDetails);
                 if (result.IsValid)
                 {
-                    var UserInfo = await ServiceManager.GetInstance().GetAllUserDetails()
-                        .GetUserInformation(userDetails);
+                    var instance = new BuisnessConfig();
+                    //BuisnessConfig.container.Register<IGetUserDetailsServices, GetUserDetails>();
+                    var obj = instance.container.GetInstance<IGetUserDetailsServices>();
+                    var UserInfo = await obj.GetUserInformation(userDetails);
+                    /*var UserInfo = await ServiceManager.GetInstance().GetAllUserDetails()
+                        .GetUserInformation(userDetails);*/
                     if (UserInfo[0].UserEmail is null)
                     {
                         throw new UserLoginException(ErrorCodes.USER_NOT_FOUND);

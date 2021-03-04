@@ -3,7 +3,23 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head><title></title></head>
+<head>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" style="color:white;align-content:center">Welcome UserManageMent System</a>
+        <form action="/UserDetails" method="post">
+            <input type="hidden" name="NewAccessType" id="IAccessType" value=@ViewBag.AccessType disabled />
+            <button type="submit" class="btn btn-outline-success" style="margin-left:100px;">Success</button>
+        </form>
+        <div class="btn-group dropleft">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                @ViewBag.response
+            </button>
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+                <a class="dropdown-item">Logout</a>
+            </div>
+        </div>
+    </nav>
+</head>
     <body>
         Welcome to goa singham
         @ViewBag.response

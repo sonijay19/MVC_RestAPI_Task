@@ -25,6 +25,9 @@ namespace MVCUserMangementTask
         {
             services.AddControllersWithViews();
             services.AddHttpClient();
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(60);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +47,7 @@ namespace MVCUserMangementTask
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
 

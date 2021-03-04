@@ -43,8 +43,8 @@ namespace UserManageMentSerivces.DAO
         {
             return $"UserDetails.UserEmail = @userEmail AND";
         }
-
-        async Task<UserInformation> IGetUserLoginAuthenticate.GetUserAuthenticate(UserLoginRequestDTO UserDetails)
+            
+        public async Task<UserInformation> GetUserAuthenticate(UserLoginRequestDTO UserDetails)
         {
             UserInformation UserInfo = new UserInformation();
             GetQueryByProperties getQuery = new GetQueryByProperties();
@@ -68,6 +68,7 @@ namespace UserManageMentSerivces.DAO
                                 LastName = reader["lastName"].ToString(),
                                 UserType = ((UserIdDeleted)Convert.ToInt16(reader["IsDeleted"])).ToString(),
                                 UserStatus = reader["StatusCode"].ToString(),
+                                PhoneNumber = reader["PhoneNumber"].ToString(),
                             };
                     }
                     conn.Close();
@@ -76,7 +77,7 @@ namespace UserManageMentSerivces.DAO
             }
         }
 
-        async Task<List<UserInformation>> IGetUserLoginAuthenticate.GetAllUserInformations(UserLoginRequestDTO UserEmail)
+        public async Task<List<UserInformation>> GetAllUserInformations(UserLoginRequestDTO UserEmail)
         {
             List<UserInformation> UserInfo = new List<UserInformation>();
             GetQueryByProperties getQuery = new GetQueryByProperties();
@@ -101,6 +102,7 @@ namespace UserManageMentSerivces.DAO
                                 LastName = reader["lastName"].ToString(),
                                 UserType = ((UserIdDeleted)Convert.ToInt16(reader["IsDeleted"])).ToString(),
                                 UserStatus = reader["StatusCode"].ToString(),
+                                PhoneNumber = reader["PhoneNumber"].ToString(),
                             }
                         );
                     }

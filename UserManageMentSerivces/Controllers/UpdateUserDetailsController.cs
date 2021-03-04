@@ -10,14 +10,14 @@ using UserManageMentSerivces.ClientLayer.RequestMessages;
 namespace UserManageMentSerivces.Controllers
 {
     [ApiController]
-    [Route("api/v1/UpdateUserDetails/{id}")]
+    [Route("api/v1/UpdateUserDetails")]
     public class UpdateUserDetailsController : ControllerBase
     {
         [HttpPut]
         public async Task<IActionResult> Get(UserUpdateRequestMessage request)
         {
             var response = await ClientServiceManager.GetInstance().UpdateUserInformation()
-                .UpdateUserDetailsAsync(request);
+                .   UpdateUserDetailsAsync(request);
             return Ok(response);
         }
     }
