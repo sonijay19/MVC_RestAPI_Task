@@ -8,28 +8,19 @@ using UserManageMentSerivces.BusinessLayer.Entities.DTO;
 using UserManageMentSerivces.BusinessLayer.Interfaces;
 using UserManageMentSerivces.ClientLayer.RequestMessages;
 using UserManageMentSerivces.DAO;
+using UserManageMentSerivces.DAO.Interface;
 
 namespace UserManageMentSerivces.BusinessLayer
 {
     public class AuthenticateUser : IUserGetdetailsServices
     {
-        private static AuthenticateUser _instance;
-        public static AuthenticateUser Instance
+        private IGetUserLoginAuthenticate userAuthenticate;
+        public AuthenticateUser(IGetUserLoginAuthenticate userAuthenticate)
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    if (_instance == null)
-                    {
-                        _instance = new AuthenticateUser();
-                    }
-                }
-                return _instance;
-            }
+            this.userAuthenticate = userAuthenticate;
         }
 
-        async Task<UserInformation> IUserGetdetailsServices.AuthenticateUser(UserLoginRequestMessages user)
+        public async Task<UserInformation> AuthenticateUserAsync(UserLoginRequestMessages user)
         {
             var config = new MapperConfiguration(cfg =>
                 cfg.CreateMap<UserLoginRequestMessages, UserLoginRequestDTO>()
@@ -37,9 +28,9 @@ namespace UserManageMentSerivces.BusinessLayer
             BusinessLoginUserResponse userResponse = new BusinessLoginUserResponse();
             UserLoginRequestDTO requestMessage = new UserLoginRequestDTO();
             requestMessage = config.CreateMapper().Map<UserLoginRequestDTO>(user);
-
-            var userInfo = await DAOServiceManager.GetInstance().GetAuthenticateUserByEmail()
-                .GetUserAuthenticate(requestMessage);
+            var userInfo = await userAuthenticate.GetUserAuthenticate(requestMessage);
+            /*var userInfo = await DAOServiceManager.GetInstance().GetAuthenticateUserByEmail()
+                .GetUserAuthenticate(requestMessage);*/
             if (userInfo != null)
             {
                 return userInfo;

@@ -78,17 +78,8 @@ namespace UserManageMentSerivces.DAO.DAOServices
                         conn.Close();
                         return false;
                     }
-                    /*while (reader.Read())
-                    {
-                        Debug.WriteLine(reader[0]);
-                    }*/
-                    /*if (result == -1)
-                    {
-                        conn.Close();
-                        return false;
-                    }*/
-                    conn.Close();
-                    return false;
+                    //conn.Close();
+                    //return false;
                 }
                 catch (Exception e)
                 {

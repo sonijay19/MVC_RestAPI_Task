@@ -16,25 +16,10 @@ namespace UserManageMentSerivces.BusinessLayer
             return serviceManagerInstance;
         }
 
-        public IUserGetdetailsServices GetUserLoginAuthentication()
-        {
-            return AuthenticateUser.Instance;
-        }
-
-        public IGetUserDetailsServices GetAllUserDetails()
-        {
-            return GetUserDetails.Instance;
-        }
-
         //BusinessUpdateUserInformation
         public IUserUpdateInformationServices UserDetailsUpdate()
         {
             return BusinessUserUpdateInformation.Instance;
-        }
-
-        public IBusinessInsertUserDetails InsertUserInformation()
-        {
-            return BusinessInsertUserDetails.Instance;
         }
 
         public IUserDetailsRemoveService DeleteUserDetails()

@@ -15,34 +15,22 @@ namespace UserManageMentSerivces.BusinessLayer.BusinessServices
 {
     public class BusinessInsertUserDetails : IBusinessInsertUserDetails
     {
-        private static BusinessInsertUserDetails _instance;
-        public static BusinessInsertUserDetails Instance
+        
+        private IUserDetailsInsert userDetailsInsert;
+        public BusinessInsertUserDetails(IUserDetailsInsert detailsInsert)
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    if (_instance == null)
-                    {
-                        _instance = new BusinessInsertUserDetails();
-                    }
-                }
-                return _instance;
-            }
+            userDetailsInsert = detailsInsert;
         }
+
         public async Task<bool> InsertUserDetails(UserUpdateRequestMessage user)
         {
+            
             var config = new MapperConfiguration(cfg =>
                 cfg.CreateMap<UserUpdateRequestMessage, BusinessInsertUserRequestMessage>()
             );
+
             var requestMessage = config.CreateMapper().Map<BusinessInsertUserRequestMessage>(user);
-            DAOConfig daoConfig = new DAOConfig();
-            var obj = daoConfig.container.GetInstance<IUserDetailsInsert>();
-            /*var instance = new BuisnessConfig();
-            var obj = instance.container.GetInstance<IBusinessInsertUserDetails>();*/
-            var userInfo = await obj.InsertUserDetails(requestMessage);
-            /*var userInfo = await DAOServiceManager.GetInstance().InsertUserDetails()
-                .InsertUserDetails(requestMessage);*/
+            var userInfo = await userDetailsInsert.InsertUserDetails(requestMessage);
             if (userInfo)
             {
                 return userInfo;

@@ -23,10 +23,6 @@ namespace UserManageMentSerivces.ClientLayer
             return ClientUpdateUserService.Instance;
         }
         //AddUserDetailsServices //IUserInformationInsert
-        public IUserInformationInsert AddUserInfo()
-        {
-            return AddUserDetailsServices.Instance;
-        }
 
         public IDeleteUserInformation RemoveUserInformation()
         {

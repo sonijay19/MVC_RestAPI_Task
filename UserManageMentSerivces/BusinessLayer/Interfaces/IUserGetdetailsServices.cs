@@ -10,6 +10,6 @@ namespace UserManageMentSerivces.BusinessLayer.Interfaces
 {
     public interface IUserGetdetailsServices
     {
-        Task<UserInformation> AuthenticateUser(UserLoginRequestMessages user);
+        Task<UserInformation> AuthenticateUserAsync(UserLoginRequestMessages user);
     }
 }

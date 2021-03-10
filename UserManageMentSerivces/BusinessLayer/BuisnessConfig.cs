@@ -13,7 +13,7 @@ namespace UserManageMentSerivces.BusinessLayer
         public ServiceContainer container = new ServiceContainer();
         public BuisnessConfig()
         {
-            container.Register<IGetUserDetailsServices, GetUserDetails>();
+            //container.Register<IGetUserDetailsServices, GetUserDetails>();
             //BusinessInsertUserDetails : IBusinessInsertUserDetails
             container.Register<IBusinessInsertUserDetails,BusinessInsertUserDetails>();
         }

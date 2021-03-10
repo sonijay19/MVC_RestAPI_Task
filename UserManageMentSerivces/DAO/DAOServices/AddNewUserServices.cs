@@ -38,7 +38,7 @@ namespace UserManageMentSerivces.DAO.DAOServices
                 cmd.Parameters.AddWithValue("@phonenumber", UserDetails.PhoneNumber.ToString());
                 try
                 {
-                    var reader = cmd.ExecuteReader();
+                    var reader = await cmd.ExecuteReaderAsync();
                     var one = reader.Read();
                     if (one)
                     {
@@ -79,7 +79,7 @@ namespace UserManageMentSerivces.DAO.DAOServices
         public async Task<bool> InsertQuery(BusinessInsertUserRequestMessage UserDetails)
         {
             GetQueryByProperties getQuery = new GetQueryByProperties();
-            string newQuery = "SELECT * FROM UserDetails WHERE UserEmail = 'soni993@gmail.com' AND PhoneNumber = '3653658625' AND FirstName = 'asdf' AND LastName = 'asdfj'";
+            //string newQuery = "SELECT * FROM UserDetails WHERE UserEmail = 'soni993@gmail.com' AND PhoneNumber = '3653658625' AND FirstName = 'asdf' AND LastName = 'asdfj'";
             string query = getQuery.GetDetailQuery("UpdateStatus", "ChangeStatus");
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {

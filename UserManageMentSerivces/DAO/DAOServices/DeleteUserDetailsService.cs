@@ -56,7 +56,7 @@ namespace UserManageMentSerivces.DAO.DAOServices
                     conn.Close();
                     return true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     return false;
                 }

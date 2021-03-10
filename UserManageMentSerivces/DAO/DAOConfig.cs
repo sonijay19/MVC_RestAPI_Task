@@ -13,7 +13,7 @@ namespace UserManageMentSerivces.DAO
         public ServiceContainer container = new ServiceContainer();
         public DAOConfig()
         {
-            container.Register<IGetUserLoginAuthenticate, GetUserInformationDB>();
+            //container.Register<IGetUserLoginAuthenticate, GetUserInformationDB>();
             //InsertUserDetailsServices: IUserDetailsInsert
             container.Register<IUserDetailsInsert, InsertUserDetailsServices>();
         }

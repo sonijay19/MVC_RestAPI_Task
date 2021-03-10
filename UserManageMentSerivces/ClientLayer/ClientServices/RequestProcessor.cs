@@ -8,22 +8,19 @@ using UserManageMentSerivces.Exceptions;
 using UserManageMentSerivces.BusinessLayer.Entities.Enums;
 using UserManageMentSerivces.BusinessLayer.Interfaces;
 using LightInject;
+using UserManageMentSerivces.DAO;
+using UserManageMentSerivces.ClientLayer.Entites.Interfaces;
+using LightInject;
 
 namespace DemoService.ClientLayer
 {
-    public class RequestProcessor
+    public class RequestProcessor : IUserUpdateAuthenticate
     {
-        private static RequestProcessor _instance;
-        public static RequestProcessor Instance
+        //AuthenticateUser : IUserGetdetailsServices
+        private IUserGetdetailsServices userDetailServices;
+        public RequestProcessor(IUserGetdetailsServices userDetails)
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new RequestProcessor();
-                }
-                return _instance;
-            }
+            userDetailServices = userDetails;
         }
         public async Task<UserLoginResponseMessages> AuthenticateUser(UserLoginRequestMessages userDetails)
         {
@@ -34,10 +31,12 @@ namespace DemoService.ClientLayer
                 var result = validator.Validate(userDetails);
                 if (result.IsValid)
                 {
-                    var UserInfo = await ServiceManager.GetInstance().GetUserLoginAuthentication()
-                        .AuthenticateUser(userDetails);
+
+                    /*var UserInfo = await ServiceManager.GetInstance().GetUserLoginAuthentication()
+                        .AuthenticateUserAsync(userDetails);*/
+                    var UserInfo = await userDetailServices.AuthenticateUserAsync(userDetails);
                     if(UserInfo.UserEmail is null)
-                    {
+                    {       
                         throw new UserLoginException(ErrorCodes.USER_NOT_FOUND);
                     }
                     responseUser.UserDetails = UserInfo;

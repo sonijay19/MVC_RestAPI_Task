@@ -16,18 +16,12 @@ namespace UserManageMentSerivces.DAO.DAOServices
 {
     public class AddUserDetailsServices : IUserInformationInsert
     {
-        private static AddUserDetailsServices _instance;
-        public static AddUserDetailsServices Instance
+        private IBusinessInsertUserDetails insertUserDetails;
+        public AddUserDetailsServices(IBusinessInsertUserDetails addUserDetails)
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new AddUserDetailsServices();
-                }
-                return _instance;
-            }
+            insertUserDetails = addUserDetails;
         }
+
         public async Task<UserUpdateResponseMessage> InsertUserDetailsAsync(UserUpdateRequestMessage userDetails)
         {
             UserUpdateResponseMessage responseUser = new UserUpdateResponseMessage();
@@ -37,11 +31,7 @@ namespace UserManageMentSerivces.DAO.DAOServices
                 var result = validator.Validate(userDetails);
                 if (result.IsValid)
                 {
-                    var instance = new BuisnessConfig();
-                    var obj = instance.container.GetInstance<IBusinessInsertUserDetails>();
-                    var UserInfo = await obj.InsertUserDetails(userDetails);
-                    /*var UserInfo = await ServiceManager.GetInstance().InsertUserInformation()
-                        .InsertUserDetails(userDetails);*/
+                    var UserInfo = await insertUserDetails.InsertUserDetails(userDetails);
                     if (UserInfo)
                     {
                         responseUser.Success = UserInfo;

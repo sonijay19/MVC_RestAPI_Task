@@ -9,26 +9,15 @@ using UserManageMentSerivces.BusinessLayer.Interfaces;
 using UserManageMentSerivces.ClientLayer.RequestMessages;
 using UserManageMentSerivces.DAO;
 using UserManageMentSerivces.DAO.Interface;
-using LightInject;
 
 namespace UserManageMentSerivces.BusinessLayer
 {
     public class GetUserDetails : IGetUserDetailsServices
     {
-        private static GetUserDetails _instance;
-        public static GetUserDetails Instance
+        private readonly IGetUserLoginAuthenticate userAuthenticate;
+        public GetUserDetails(IGetUserLoginAuthenticate userAuthenticate)
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    if (_instance == null)
-                    {
-                        _instance = new GetUserDetails();
-                    }
-                }
-                return _instance;
-            }
+            this.userAuthenticate = userAuthenticate;
         }
         public async Task<List<UserInformation>> GetUserInformation(UserLoginRequestMessages user)
         {
@@ -38,9 +27,7 @@ namespace UserManageMentSerivces.BusinessLayer
             DAOConfig daoConfig = new DAOConfig();
             BusinessLoginUserResponse userResponse = new BusinessLoginUserResponse();
             UserLoginRequestDTO requestMessage = new UserLoginRequestDTO();
-            requestMessage = config.CreateMapper().Map<UserLoginRequestDTO>(user);
-            var userInformation = daoConfig.container.GetInstance<IGetUserLoginAuthenticate>();
-            var userInfo = await userInformation.GetAllUserInformations(requestMessage);
+            var userInfo = await userAuthenticate.GetAllUserInformations(requestMessage);
             //List<UserInformation> userInfo = await DAOServiceManager.GetInstance().GetUserInformationAll().GetAllUserInformations(requestMessage);
 
             if (userInfo != null)

@@ -8,7 +8,7 @@ namespace UserManageMentSerivces.ClientLayer.ResponseMessages
 {
     public class UserLoginResponseMessages
     {
-        public UserInformation? UserDetails { get; set; }
-        public string? ErrorCodes { get; set; }
+        public UserInformation UserDetails { get; set; }
+        public string ErrorCodes { get; set; }
     }
 }

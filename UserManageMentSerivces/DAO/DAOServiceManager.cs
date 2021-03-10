@@ -17,15 +17,15 @@ namespace RESTServices.DAO
             return daoserviceManagerInstance;
         }
 
-        public IGetUserLoginAuthenticate GetAuthenticateUserByEmail()
+        /*public IGetUserLoginAuthenticate GetAuthenticateUserByEmail()
         {
             return GetUserInformationDB.Instance;
-        }
+        }*/
 
-        public IGetUserLoginAuthenticate GetUserInformationAll()
+        /*public IGetUserLoginAuthenticate GetUserInformationAll()
         {
             return GetUserInformationDB.Instance;
-        }
+        }*/
 
         public IUserDetailsUpdate UpdateUserInformation()
         {

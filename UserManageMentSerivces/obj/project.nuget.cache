@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "J7nuRUc3VGu9Ff7LId1GW91KwcDRtgMYCU1QCXa4ARwv1Ncu+ysmkRgVuf1VGAyqsD3D7rb7bfZX9vSGxifJNg==",
+  "dgSpecHash": "y/aVzoYTyWEIdWKoPRmblfPU4Clgi2e4V/96/n8bd5oSZ0272XjhVvR4KCcy6TNBLLallArQrP6rW2z2IHevRA==",
   "success": true,
   "projectFilePath": "G:\\Training\\2_21_2021\\UserManageMentSerivces\\UserManageMentSerivces.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\sonij\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
     "C:\\Users\\sonij\\.nuget\\packages\\ini-parser\\2.5.2\\ini-parser.2.5.2.nupkg.sha512",
     "C:\\Users\\sonij\\.nuget\\packages\\lightinject\\6.4.0\\lightinject.6.4.0.nupkg.sha512",
+    "C:\\Users\\sonij\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\sonij\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\sonij\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\sonij\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.0.4\\microsoft.dotnet.platformabstractions.2.0.4.nupkg.sha512",
     "C:\\Users\\sonij\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.2\\microsoft.extensions.configuration.3.1.2.nupkg.sha512",

@@ -8,8 +8,10 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using UserManageMentSerivces.Extensions;
 
 namespace UserManageMentSerivces
 {
@@ -29,6 +31,16 @@ namespace UserManageMentSerivces
             services.AddCors(builder => {
                 builder.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
+            try
+            {
+                InterfaceRegister.RegisterInterface(services);
+            }
+            catch (Exception e)
+            {
+                Debug.Write(e);
+                throw;
+            }
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

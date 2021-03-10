@@ -17,26 +17,11 @@ namespace UserManageMentSerivces.DAO
     public class GetUserInformationDB : IGetUserLoginAuthenticate
     {
         private SqlConnection conn;
+
         public GetUserInformationDB()
         {
             ConnectionDB connect = new ConnectionDB();
             this.conn = connect.ConnectDb();
-        }
-
-        private static GetUserInformationDB _instance;
-        public static GetUserInformationDB Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    if (_instance == null)
-                    {
-                        _instance = new GetUserInformationDB();
-                    }
-                }
-                return _instance;
-            }
         }
 
         public static string GetEmailQuery(string userEmail)
