@@ -144,3 +144,5 @@ G:\Training\2_21_2021\UserManageMentServicesTest\obj\Debug\netcoreapp3.1\UserMan
 G:\Training\2_21_2021\UserManageMentServicesTest\obj\Debug\netcoreapp3.1\UserManageMentServicesTest.genruntimeconfig.cache
 G:\Training\2_21_2021\UserManageMentServicesTest\bin\Debug\netcoreapp3.1\Castle.Core.dll
 G:\Training\2_21_2021\UserManageMentServicesTest\bin\Debug\netcoreapp3.1\Moq.dll
+G:\Training\2_21_2021\UserManageMentServicesTest\bin\Debug\netcoreapp3.1\MediatR.dll
+G:\Training\2_21_2021\UserManageMentServicesTest\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll

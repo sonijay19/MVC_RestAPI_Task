@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using RESTServices.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,25 +7,17 @@ using UserManageMentSerivces.BusinessLayer.Entities.DTO.ReuestMessages;
 using UserManageMentSerivces.BusinessLayer.Interfaces;
 using UserManageMentSerivces.ClientLayer.RequestMessages;
 using LightInject;
+using UserManageMentSerivces.DAO.Interface;
 
 namespace UserManageMentSerivces.BusinessLayer.BusinessServices
 {
     public class BusinessUserUpdateInformation : IUserUpdateInformationServices
     {
-        private static BusinessUserUpdateInformation _instance;
-        public static BusinessUserUpdateInformation Instance
+
+        private static IUserDetailsUpdate userUpdateInformation;
+        public BusinessUserUpdateInformation(IUserDetailsUpdate businessUserUpdateInformation)
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    if (_instance == null)
-                    {
-                        _instance = new BusinessUserUpdateInformation();
-                    }
-                }
-                return _instance;
-            }
+            userUpdateInformation = businessUserUpdateInformation;
         }
 
         public async Task<bool> BusinessUpdateUserInformation(UserUpdateRequestMessage userDetails)
@@ -35,8 +26,9 @@ namespace UserManageMentSerivces.BusinessLayer.BusinessServices
                 cfg.CreateMap<UserUpdateRequestMessage, BusinessUpdateUserRequestMessage>()
             );
             var requestMessage = config.CreateMapper().Map<BusinessUpdateUserRequestMessage>(userDetails);
-            var userInfo = await DAOServiceManager.GetInstance().UpdateUserInformation()
-                .UpdateUserDetailAsync(requestMessage);
+            /*var userInfo = await DAOServiceManager.GetInstance().UpdateUserInformation()
+                .UpdateUserDetailAsync(requestMessage);*/
+            var userInfo = await userUpdateInformation.UpdateUserDetailAsync(requestMessage);
             if (userInfo)
             {
                 return userInfo;

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using RESTServices.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +23,6 @@ namespace UserManageMentSerivces.BusinessLayer
             var config = new MapperConfiguration(cfg =>
                 cfg.CreateMap<UserLoginRequestMessages, UserLoginRequestDTO>()
             );
-            DAOConfig daoConfig = new DAOConfig();
             BusinessLoginUserResponse userResponse = new BusinessLoginUserResponse();
             UserLoginRequestDTO requestMessage = new UserLoginRequestDTO();
             var userInfo = await userAuthenticate.GetAllUserInformations(requestMessage);

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UserManageMentSerivces.ClientLayer;
 using UserManageMentSerivces.ClientLayer.Entites.DTO.RequestMessages;
+using UserManageMentSerivces.ClientLayer.Entites.Interfaces;
 
 namespace UserManageMentSerivces.Controllers
 {
@@ -12,11 +13,15 @@ namespace UserManageMentSerivces.Controllers
     [Route("api/v1/DeleteUser")]
     public class DeleteUserController : Controller
     {
+        private IDeleteUserInformation deleteUser;
+        public DeleteUserController(IDeleteUserInformation deleteUserInformation)
+        {
+            deleteUser = deleteUserInformation;
+        }
         [HttpDelete]
         public async Task<IActionResult> Get(DeleteUserDetailsRequestMessage userDetails)
         {
-            var response = await ClientServiceManager.GetInstance().RemoveUserInformation()
-                .DeleteUserDetailsAsync(userDetails.UserId);
+            var response = await deleteUser.DeleteUserDetailsAsync(userDetails.UserId);
             return Ok(response);
         }
     }

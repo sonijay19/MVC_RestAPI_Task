@@ -38,8 +38,15 @@ namespace UserManageMentSerivces.Extensions
             //Delete User
             services.AddSingleton<IDeleteUserDetails, DeleteUserDetailsService>();
             services.AddSingleton<IUserDetailsRemoveService, RemoveUserInfo>();
-            //RemoveUserInfo : IUserDetailsRemoveService
-            //DeleteUserDetailsService : IDeleteUserDetails
+            services.AddSingleton<IDeleteUserInformation, DeleteUserInformation>();
+
+            //Update User Details
+            services.AddSingleton<IUserDetailsUpdate, UserUpdateDetails>();
+            services.AddSingleton<IUserUpdateInformationServices, BusinessUserUpdateInformation>();
+            services.AddSingleton<IClientUserUpdateServices, ClientUpdateUserService>();
+            // ClientUpdateUserService : IClientUserUpdateServices
+            // BusinessUserUpdateInformation : IUserUpdateInformationServices
+            //UserUpdateDetails : IUserDetailsUpdate
 
         }
     }

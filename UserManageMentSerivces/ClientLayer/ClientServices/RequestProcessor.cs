@@ -18,9 +18,15 @@ namespace DemoService.ClientLayer
     {
         //AuthenticateUser : IUserGetdetailsServices
         private IUserGetdetailsServices userDetailServices;
+        private IGetUserDetailsServices userGetDetails;
         public RequestProcessor(IUserGetdetailsServices userDetails)
         {
             userDetailServices = userDetails;
+        }
+
+        public RequestProcessor(IGetUserDetailsServices userDetails)
+        {
+            userGetDetails = userDetails;
         }
         public async Task<UserLoginResponseMessages> AuthenticateUser(UserLoginRequestMessages userDetails)
         {
@@ -60,12 +66,7 @@ namespace DemoService.ClientLayer
                 var result = validator.Validate(userDetails);
                 if (result.IsValid)
                 {
-                    var instance = new BuisnessConfig();
-                    //BuisnessConfig.container.Register<IGetUserDetailsServices, GetUserDetails>();
-                    var obj = instance.container.GetInstance<IGetUserDetailsServices>();
-                    var UserInfo = await obj.GetUserInformation(userDetails);
-                    /*var UserInfo = await ServiceManager.GetInstance().GetAllUserDetails()
-                        .GetUserInformation(userDetails);*/
+                    var UserInfo = await userGetDetails.GetUserInformation(userDetails);
                     if (UserInfo[0].UserEmail is null)
                     {
                         throw new UserLoginException(ErrorCodes.USER_NOT_FOUND);

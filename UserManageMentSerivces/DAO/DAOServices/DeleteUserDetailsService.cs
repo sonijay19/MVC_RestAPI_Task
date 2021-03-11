@@ -18,22 +18,7 @@ namespace UserManageMentSerivces.DAO.DAOServices
             ConnectionDB connect = new ConnectionDB();
             this.conn = connect.ConnectDb();
         }
-        private static DeleteUserDetailsService _instance;
-        public static DeleteUserDetailsService Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    if (_instance == null)
-                    {
-                        _instance = new DeleteUserDetailsService();
-                    }
-                }
-                return _instance;
-            }
-        }
-        async Task<bool> IDeleteUserDetails.DeleteUserDetailsAsync(string userId)
+        public async Task<bool> DeleteUserDetailsAsync(string userId)
         {
             // updatedUserEmail updatedUserFirstName updatedUserLastName updatedUserTypeId userId
             GetQueryByProperties getQuery = new GetQueryByProperties();

@@ -14,7 +14,7 @@ namespace UserManageMentSerivces.ClientLayer.ClientServices
 {
     public class GetAllUserInformationDetails : IGetAllUserData
     {
-        private IGetUserDetailsServices getUserDetails;
+        private IGetUserDetailsServices  getUserDetails;
         public GetAllUserInformationDetails(IGetUserDetailsServices userDetails)
         {
             getUserDetails = userDetails;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UserManageMentSerivces.BusinessLayer;
 using UserManageMentSerivces.BusinessLayer.Entities.Enums;
+using UserManageMentSerivces.BusinessLayer.Interfaces;
 using UserManageMentSerivces.ClientLayer.Entites.Interfaces;
 using UserManageMentSerivces.ClientLayer.Entites.Validation;
 using UserManageMentSerivces.ClientLayer.RequestMessages;
@@ -15,17 +16,10 @@ namespace UserManageMentSerivces.ClientLayer.ClientServices
 {
     public class ClientUpdateUserService : IClientUserUpdateServices
     {
-        private static ClientUpdateUserService _instance;
-        public static ClientUpdateUserService Instance
+        private static IUserUpdateInformationServices userUpdateService;
+        public ClientUpdateUserService(IUserUpdateInformationServices updateInformationServices)
         {
-            get
-            {
-                if(_instance == null)
-                {
-                    _instance = new ClientUpdateUserService();
-                }
-                return _instance;
-            }
+            userUpdateService = updateInformationServices;
         }
 
         async public Task<UserUpdateResponseMessage> UpdateUserDetailsAsync(UserUpdateRequestMessage userDetails)
@@ -37,8 +31,9 @@ namespace UserManageMentSerivces.ClientLayer.ClientServices
                 var result = validator.Validate(userDetails);
                 if (result.IsValid)
                 {
-                    var UserInfo = await ServiceManager.GetInstance().UserDetailsUpdate()
-                        .BusinessUpdateUserInformation(userDetails);
+                    /*var UserInfo = await ServiceManager.GetInstance().UserDetailsUpdate()
+                        .BusinessUpdateUserInformation(userDetails);*/
+                    var UserInfo = await userUpdateService.BusinessUpdateUserInformation(userDetails);
                     if (UserInfo)
                     {
                         responseUser.Success = UserInfo;
